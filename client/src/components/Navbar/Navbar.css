@@ -1,0 +1,15 @@
+.navbar {
+    min-height: 100px;
+    color: black;
+}
+
+.navbar-nav {
+    color: black;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: 100px;
+    line-height: 100px;
+    src: url("./HelpingHands-200-150.png")
+}
