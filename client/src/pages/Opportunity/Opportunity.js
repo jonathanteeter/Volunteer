@@ -41,7 +41,7 @@ render() {
         <Container style={{ marginTop: 30 }}>
             <Row>
                 <Col size="md-12" className="text-center">
-                <h1>So Many Opportunities...</h1>
+                <h1>So Many Many Opportunities...</h1>
                 <br />
 
         {/* <Container fluid>
