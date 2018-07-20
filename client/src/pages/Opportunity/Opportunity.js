@@ -23,6 +23,11 @@ handleSubmit = (event) => {
     event.preventDefault();
 }
 
+handleFormSubmit = (event) => {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+}
+
 render() {
     return (
 
