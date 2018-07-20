@@ -56,6 +56,7 @@ const SignupForm = props => (
         placeholder=""
         id="city"
       />
+      <br />
       <button
         type="submit"
         onClick={props.handleFormSubmit}

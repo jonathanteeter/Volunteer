@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import API from "../../utils/API";
+import Hero from "../../components/Hero";
 import Jumbotron from "../../components/Jumbotron";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
@@ -31,15 +32,26 @@ handleFormSubmit = (event) => {
 render() {
     return (
 
-        <Container fluid>
+        <div>
+        <Hero backgroundImage="http://volunteercentrewi.org/wp-content/uploads/2017/02/become-a-volunteer.png" alt="Volunteer Hands">
+            {/* alternate link = https://gt20.org/wp-content/uploads/2016/09/volunteer.png */}     
+            <h1>Volunteer YOUR TIME and GIVE BACK !</h1>
+        </Hero>
+
+        <Container style={{ marginTop: 30 }}>
+            <Row>
+                <Col size="md-12" className="text-center">
+                <h1>So Many Opportunities...</h1>
+                <br />
+
+        {/* <Container fluid>
             <Row>
                 <Col size="md-12">
                     <Jumbotron>
                         <h1>Volunteer YOUR TIME and GIVE BACK !</h1>
                         <br />
                         <h3 className="text-center">So Many Opportunities...</h3>
-                    </Jumbotron>
-
+                    </Jumbotron> */}
 
                     <form className="form-inline">
                         <div class="form-group" onSubmit={this.handleSubmit}>       
@@ -79,7 +91,10 @@ render() {
                             <select value={this.state.date} onChange={this.handleChange}>
                                 <option value="datetime-local"></option>
                             </select>
+                            <br />
+                            <br />
                         </div>
+                    </form>
 
                     {/* <Input
                         label="Date:"
@@ -87,7 +102,7 @@ render() {
                         onChange={this.handleInputChange}
                         type="datetime-local"
                     /> */}
-                    </form>
+
 
                     <FormBtn
                         disabled={!(this.state.opportunity && this.state.city)}
@@ -99,6 +114,7 @@ render() {
                 </Col>
             </Row>
         </Container>
+    </div>
     );
   }
 }

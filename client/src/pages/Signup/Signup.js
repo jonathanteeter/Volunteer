@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Hero from "../../components/Hero";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
@@ -34,11 +35,18 @@ class Signup extends Component {
   render() {
     return (
 
-    <Container style={{ marginTop: 30 }}>
-      <Row>
-        <Col size="md-12">
+      <div>
+      <Hero backgroundImage="http://volunteercentrewi.org/wp-content/uploads/2017/02/become-a-volunteer.png" alt="Volunteer Hands">
+          {/* alternate link = https://gt20.org/wp-content/uploads/2016/09/volunteer.png */}     
+          <h1>Volunteer YOUR TIME and GIVE BACK !</h1>
+      </Hero>
 
-          <h1 className="text-center">Sign Up!</h1>
+      <Container style={{ marginTop: 30 }}>
+          <Row>
+              <Col size="md-12">
+              <h1 className="text-center">Sign Up!</h1>
+              <br />
+
           <SignupForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
@@ -49,6 +57,7 @@ class Signup extends Component {
         </Col>
       </Row>
     </Container>
+    </div>
     );
   }
 }
