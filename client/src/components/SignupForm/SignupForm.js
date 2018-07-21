@@ -5,55 +5,55 @@ import "./SignupForm.css";
 const SignupForm = props => (
   <form className="form-horizontal">
     <div className="form-group">
-      <label htmlFor="firstname">First Name:</label>
+      {/* <label htmlFor="firstname">First Name:</label> */}
       <input
         value={props.search}
         onChange={props.handleInputChange}
         name="firstname"
         type="text"
         className="form-control"
-        placeholder=""
+        placeholder="First Name"
         id="firstname"
       />
 
-      <label htmlFor="lastname">Last Name:</label>
+      {/* <label htmlFor="lastname">Last Name:</label> */}
       <input
         value={props.search}
         onChange={props.handleInputChange}
         name="lastname"
         type="text"
         className="form-control"
-        placeholder=""
+        placeholder="Last Name"
         id="lastname"
       />
-      <label htmlFor="firstname">Email:</label>
+      {/* <label htmlFor="firstname">Email:</label> */}
       <input
         value={props.search}
         onChange={props.handleInputChange}
         name="email"
         type="text"
         className="form-control"
-        placeholder=""
+        placeholder="Email"
         id="email"
       />
-      <label htmlFor="firstname">Phone:</label>
+      {/* <label htmlFor="firstname">Phone:</label> */}
       <input
         value={props.search}
         onChange={props.handleInputChange}
         name="phone"
         type="text"
         className="form-control"
-        placeholder=""
+        placeholder="Phone"
         id="phone"
       />
-      <label htmlFor="firstname">City:</label>
+      {/* <label htmlFor="firstname">City:</label> */}
       <input
         value={props.search}
         onChange={props.handleInputChange}
         name="city"
         type="text"
         className="form-control"
-        placeholder=""
+        placeholder="City"
         id="city"
       />
       <br />

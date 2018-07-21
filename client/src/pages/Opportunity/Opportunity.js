@@ -12,21 +12,26 @@ import SearchResults from "../../components/SearchResults";
 class Opportunity extends React.Component {
 
 state = {
-    value: 'All'
+    opportunity: 'All',
+    city: '',
+    date: ''
 }
 
 handleChange = (event) => {
-    this.setState({value: event.target.value});
+    this.setState({[event.target.name]: event.target.value});
+    console.log('Change')
+    console.log(this.state)
 }
 
 handleSubmit = (event) => {
-    alert('Your favorite flavor is: ' + this.state.value);
+    // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
 }
 
 handleFormSubmit = (event) => {
-    alert('Your favorite flavor is: ' + this.state.value);
+    // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
+    console.log(this.state);
 }
 
 render() {
@@ -41,7 +46,7 @@ render() {
         <Container style={{ marginTop: 30 }}>
             <Row>
                 <Col size="md-12" className="text-center">
-                <h1>So Many Many Opportunities...</h1>
+                <h1>So Many Opportunities...</h1>
                 <br />
 
         {/* <Container fluid>
@@ -54,11 +59,11 @@ render() {
                     </Jumbotron> */}
 
                     <form className="form-inline">
-                        <div class="form-group" onSubmit={this.handleSubmit}>       
+                        <div className="form-group" onSubmit={this.handleSubmit}>       
 
                             <h6><label>Opportunity:</label></h6>
 
-                            <select value={this.state.value} onChange={this.handleChange}>
+                            <select name="opportunity" value={this.state.opportunity} onChange={this.handleChange}>
                                 <option value="All">All</option>
                                 <option value="clerical">Clerical</option>
                                 <option value="fosterGrandparent">Foster Grandparent</option>
@@ -71,11 +76,11 @@ render() {
                             </select>
                         </div>
 
-                        <div class="form-group" onSubmit={this.handleSubmit}>
+                        <div className="form-group" onSubmit={this.handleSubmit}>
 
                             <h6><label>City:</label></h6>
 
-                            <select value={this.state.value} onChange={this.handleChange}>
+                            <select name="city" value={this.state.city} onChange={this.handleChange}>
                                 <option value="All">All</option>
                                 <option value="coloradoSprings">Colorado Springs</option>
                                 <option value="denver">Denver</option>
@@ -84,30 +89,57 @@ render() {
                             </select>
                         </div>
 
-                        <div class="form-group" onSubmit={this.handleSubmit}>
+                        <div className="form-group" onSubmit={this.handleSubmit}>
+
+                            <h6><label for="date">Date:</label></h6>
+                            <input name ="date" type="date" id="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
+                            <option value={this.state.date} onChange={this.handleChange}></option>
+                            <span class="validity"></span>
+                        
+                        </div>
+
+
+                        {/* <div>
+                            <label for="bday">Enter your birthday:</label>
+                            <input name ="date" type="date" id="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
+                            <span class="validity"></span>
+                        </div> */}
+
+
+                        
+                        <br />
+                        <br />
+
+                        {/* <div>
+                            <label for="bday">Enter your birthday:</label>
+                            <input type="date" id="bday" name="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
+                            <span className="validity"></span>
+                        </div> */}
+
+                        {/* <div className="form-group" onSubmit={this.handleSubmit}>
 
                             <h6><label>Date:</label></h6>
 
-                            <select value={this.state.date} onChange={this.handleChange}>
-                                <option value="datetime-local"></option>
+                            <select name="date" value={this.state.date} onChange={this.handleChange} itemType={"datetime-local"}>
+                                <option itemType="datetime-local"></option>
                             </select>
                             <br />
                             <br />
-                        </div>
+                        </div> */}
+
                     </form>
 
                     {/* <Input
                         label="Date:"
+                        name="date"
                         value={this.state.date}
                         onChange={this.handleInputChange}
-                        type="datetime-local"
+                        type="date"
                     /> */}
 
 
                     <FormBtn
-                        disabled={!(this.state.opportunity && this.state.city)}
-                        onClick={this.handleFormSubmit}
-                    >
+                        onClick={this.handleFormSubmit}>
                         Submit
                     </FormBtn>
      
