@@ -26,6 +26,7 @@ handleChange = (event) => {
 handleSubmit = (event) => {
     // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
+    console.log(this.value);
 }
 
 handleFormSubmit = (event) => {
@@ -91,10 +92,10 @@ render() {
 
                         <div className="form-group" onSubmit={this.handleSubmit}>
 
-                            <h6><label for="date">Date:</label></h6>
+                            <h6><label htmlFor="date">Date:</label></h6>
                             <input name ="date" type="date" id="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
                             <option value={this.state.date} onChange={this.handleChange}></option>
-                            <span class="validity"></span>
+                            <span className="validity"></span>
                         
                         </div>
 
