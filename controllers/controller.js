@@ -32,5 +32,11 @@ module.exports = {
           .create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+    },
+    findResults: function(req, res) {
+        db.Info
+          .find(req.body)
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
     }
 };
