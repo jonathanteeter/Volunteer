@@ -13,7 +13,7 @@ const Navbar = props => (
         {/* IS THIS DIV NEEDED ?? */}
         <div>   
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
 
@@ -66,18 +66,6 @@ const Navbar = props => (
                 >
                 <Link to="/signup" className="nav-link">
                     Sign Up
-                </Link>
-                </li>
-
-                <li 
-                className={
-                    window.location.pathname === "/books"
-                    ? "nav-item active"
-                    : "nav-item"
-                }
-                >
-                <Link to="/books" className="nav-link">
-                    Books
                 </Link>
                 </li>
 

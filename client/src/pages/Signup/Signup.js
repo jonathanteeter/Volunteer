@@ -4,34 +4,50 @@ import Hero from "../../components/Hero";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
+import { Input, Dropdown, FormBtn } from "../../components/Form";
 import SignupForm from "../../components/SignupForm";
 import SearchResults from "../../components/SearchResults";
 
 class Signup extends Component {
   state = {
-    search: "",
-    breeds: [],
-    results: [],
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    city: "",
     error: ""
   };
 
+  handleChange = (event) => {
+    this.setState({[event.target.name]: event.target.value});
+    console.log('Change')
+    console.log(this.state)
+  }
 
   handleInputChange = event => {
     this.setState({ signup: event.target.value });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    API.getDogsOfBreed(this.state.signup)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   API.getDogsOfBreed(this.state.signup)
+  //     .then(res => {
+  //       if (res.data.status === "error") {
+  //         throw new Error(res.data.message);
+  //       }
+  //       this.setState({ results: res.data.message, error: "" });
+  //     })
+  //     .catch(err => this.setState({ error: err.message }));
+  // };
   
+  handleFormSubmit = (event) => {
+    // alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+    console.log(this.state);
+
+  }
+
+
   render() {
     return (
 
@@ -43,21 +59,64 @@ class Signup extends Component {
 
       <Container style={{ marginTop: 30 }}>
           <Row>
-              <Col size="md-12">
+              <Col size="md-4">
+              </Col>
+              <Col size="md-4">
               <h1 className="text-center">Sign Up!</h1>
               <br />
+              
+                <form>
+                  <Input
+                    value={this.state.firstname}
+                    onChange={this.handleChange}
+                    name="firstname"
+                    placeholder="Firstname (required)"
+                  />
+                  <Input
+                    value={this.state.lastname}
+                    onChange={this.handleChange}
+                    name="lastname"
+                    placeholder="Lastname (required)"
+                  />
+                  <Input
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    name="email"
+                    placeholder="Email (required)"
+                  />
+                  <Input
+                    value={this.state.phone}
+                    onChange={this.handleChange}
+                    name="phone"
+                    placeholder="Phone (optional)"
+                  />
+                  <Input
+                    value={this.state.city}
+                    onChange={this.handleChange}
+                    name="city"
+                    placeholder="City (optional)"
+                  />
 
-          <SignupForm
+                  <FormBtn
+                    disabled={!(this.state.firstname && this.state.lastname && this.state.email)}
+                    onClick={this.handleFormSubmit}
+                  >
+                    Sign Up!
+                  </FormBtn>
+                </form>
+
+
+          {/* <SignupForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             breeds={this.state.breeds}
           />
-          <SearchResults results={this.state.results} />
+          <SearchResults results={this.state.results} /> */}
 
-        </Col>
-      </Row>
-    </Container>
-    </div>
+              </Col>
+          </Row>
+      </Container>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import API from "../../utils/API";
 import Hero from "../../components/Hero";
-import Jumbotron from "../../components/Jumbotron";
+// import Jumbotron from "../../components/Jumbotron";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
@@ -33,6 +33,8 @@ handleFormSubmit = (event) => {
     // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
     console.log(this.state);
+
+    // db.volunteerApp.find()
 }
 
 render() {
@@ -93,9 +95,8 @@ render() {
                         <div className="form-group" onSubmit={this.handleSubmit}>
 
                             <h6><label htmlFor="date">Date:</label></h6>
-                            <input name ="date" type="date" id="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
-                            <option value={this.state.date} onChange={this.handleChange}></option>
-                            <span className="validity"></span>
+                            <input name ="date" type="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value={this.state.date} onChange={this.handleChange} />
+                             <span className="validity"></span>
                         
                         </div>
 
