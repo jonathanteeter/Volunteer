@@ -13,4 +13,22 @@ router
     .put(controller.update)
     .delete(controller.remove);
 
+
+router
+    .route("/findResults")
+    .post(controller.findResults)
+
+    /**
+     * api/findResults
+     * POST
+     * {
+     *      opportunity: Landscaping
+     *      location: Denver
+     *      date: 07/31/2018 
+     * }
+     */
+    
+    
+    
+
 module.exports = router;

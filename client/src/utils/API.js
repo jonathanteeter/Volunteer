@@ -1,20 +1,20 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  // Gets all Opportunities
+  getOpps: function() {
+    return axios.get("/api/router");
   },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  // Gets the Opportunity with the given id
+  getOpp: function(id) {
+    return axios.get("/api/router/" + id);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  // Deletes the Opportunity with the given id
+  deleteOpp: function(id) {
+    return axios.delete("/api/router/" + id);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves an Opportunity to the database
+  saveOpp: function(oppData) {
+    return axios.post("/api/router", oppData);
   }
 };
