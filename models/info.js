@@ -7,7 +7,8 @@ const infoSchema = new Schema({
     email: { type: String, lowercase: true, required: true},
     phone: { type: String},
     location: { type: String, required: true},
-    description: String
+    description: String,
+    link: String
 });
 
 const Info = mongoose.model("Info", infoSchema);

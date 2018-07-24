@@ -22,14 +22,15 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.signup)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
+    
+    // API.getDogsOfBreed(this.state.signup)
+      // .then(res => {
+  //       if (res.data.status === "error") {
+  //         throw new Error(res.data.message);
+  //       }
+  //       this.setState({ results: res.data.message, error: "" });
+  //     })
+  //     .catch(err => this.setState({ error: err.message }));
   };
   
   render() {
