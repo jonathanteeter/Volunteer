@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const routes = require("./router");
+const volunteerRoutes = require("./volunteers");
 const scrapeRoutes = require('./scrape')
 
-router.use("/router", routes);
+router.use("/volunteers", volunteerRoutes);
 
 router.use('/scrape', scrapeRoutes);
 module.exports = router;

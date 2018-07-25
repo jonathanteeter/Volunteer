@@ -32,3 +32,15 @@ const volunteerSeed = [
         link: "https://voacolorado.org/volunteer-opportunities/yard-angels"
     }
 ];
+
+db.Info
+  .remove({})
+  .then(() => db.Info.collection.insertMany(volunteerSeed))
+  .then(data => {
+      console.log(data.result.n + "records inserted");
+      process.exit(0);
+  })
+  .catch(err => {
+      console.error(err);
+      process.exit(1);
+  });

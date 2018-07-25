@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import Hero from "../../components/Hero";
 // import Jumbotron from "../../components/Jumbotron";
 import Col from "../../components/Col";
@@ -8,34 +8,61 @@ import Container from "../../components/Container";
 import { Input, Dropdown, FormBtn } from "../../components/Form";
 import Search from "../../components/SearchForm";
 import SearchResults from "../../components/SearchResults";
+import { List, ListItem } from "../../components/List";
 
-class Opportunity extends React.Component {
+
+class Opportunity extends Component {
 
 state = {
-    opportunity: 'All',
-    city: '',
-    date: ''
-}
+    opps: [],
+    organzation: '',
+    coordinator: '',
+    email: '',
+    phone: '',
+    location: '',
+    description: ''
+};
+
+componentDidMount() {
+    this.loadOpps();
+};
+
+loadOpps = () => {
+    API.getOpps()
+        .then(res =>
+            this.setState({ opps: res.data, organzation: "", coordinator: "", email: "", phone: "", location: "", description: "" })
+        )
+        .catch(err => console.log(err));
+};
 
 handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
     console.log('Change')
     console.log(this.state)
-}
+};
 
 handleSubmit = (event) => {
     // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
     console.log(this.value);
-}
+};
 
 handleFormSubmit = (event) => {
-    // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
-    console.log(this.state);
-
-    // db.volunteerApp.find()
-}
+    // if (this.state.opportunity && this.state.city) {
+        
+        API.getOpps({
+            title: this.state.organzation,
+            coordinator: this.state.coordinator,
+            email: this.state.email,
+            phone: this.state.phone,
+            location: this.state.location,
+            description: this.state.description
+        })
+            .then(res => this.loadOpps())
+            .catch(err => console.log(err));
+    // }
+};
 
 render() {
     return (
@@ -47,8 +74,10 @@ render() {
         </Hero>
 
         <Container style={{ marginTop: 30 }}>
-            <Row>
-                <Col size="md-12" className="text-center">
+            <Row className="text-center">
+                <Col size="md-12">
+
+                <Col size="md-10" className="text-center">
                 <h1>So Many Opportunities...</h1>
                 <br />
 
@@ -64,7 +93,7 @@ render() {
                     <form className="form-inline">
                         <div className="form-group" onSubmit={this.handleSubmit}>       
 
-                            <h6><label>Opportunity:</label></h6>
+                            <h6><label>Opportunity:{'\u00A0'}{'\u00A0'}</label></h6>
 
                             <select name="opportunity" value={this.state.opportunity} onChange={this.handleChange}>
                                 <option value="All">All</option>
@@ -78,7 +107,10 @@ render() {
                                 <option value="landscaping">Landscaping</option>
                             </select>
                         </div>
-
+                        {'\u00A0'}
+                        {'\u00A0'}
+                        {'\u00A0'}
+                        {'\u00A0'}
                         <div className="form-group" onSubmit={this.handleSubmit}>
 
                             <h6><label>City:</label></h6>
@@ -100,13 +132,11 @@ render() {
                         
                         </div>
 
-
                         {/* <div>
                             <label for="bday">Enter your birthday:</label>
                             <input name ="date" type="date" id="bday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></input>
                             <span class="validity"></span>
                         </div> */}
-
 
                         
                         <br />
@@ -129,8 +159,6 @@ render() {
                             <br />
                         </div> */}
 
-                    </form>
-
                     {/* <Input
                         label="Date:"
                         name="date"
@@ -139,14 +167,34 @@ render() {
                         type="date"
                     /> */}
 
+                        <FormBtn
+                            onClick={this.handleFormSubmit}>
+                            Submit
+                        </FormBtn>
+                    </form>
 
-                    <FormBtn
-                        onClick={this.handleFormSubmit}>
-                        Submit
-                    </FormBtn>
-     
+                </Col>
                 </Col>
             </Row>
+
+            <Row>
+                {this.state.opps.length ? (
+                    <List>
+                        {this.state.opps.map(data => (
+                            <ListItem key = {data._id}>
+                                <a href={data._id}>
+                                    <strong>
+                                        {data.organization} : {data.description}
+                                    </strong>
+                                </a>
+                            </ListItem>
+                        ))}
+                    </List>
+                ) : (
+                    <h4>No Results to Display</h4>
+                )}
+            </Row>
+
         </Container>
     </div>
     );
