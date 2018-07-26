@@ -5,8 +5,7 @@ import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
 import { Input, Dropdown, FormBtn } from "../../components/Form";
-// import SignupForm from "../../components/SignupForm";
-import SearchResults from "../../components/SearchResults";
+// import SearchResults from "../../components/SearchResults";
 
 class Signup extends Component {
   state = {
