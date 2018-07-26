@@ -5,7 +5,7 @@ import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
 import { Input, Dropdown, FormBtn } from "../../components/Form";
-import SignupForm from "../../components/SignupForm";
+// import SignupForm from "../../components/SignupForm";
 import SearchResults from "../../components/SearchResults";
 
 class Signup extends Component {
@@ -29,10 +29,8 @@ class Signup extends Component {
   };
 
   handleFormSubmit = (event) => {
-    // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
     console.log(this.state);
-
   }
 
   render() {
@@ -91,7 +89,6 @@ class Signup extends Component {
                     Sign Up!
                   </FormBtn>
                 </form>
-
 
           {/* <SignupForm
             handleFormSubmit={this.handleFormSubmit}
