@@ -5,7 +5,7 @@ import Col from "../../components/Col";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
 import { Input, Dropdown, FormBtn } from "../../components/Form";
-import SignupForm from "../../components/SignupForm";
+// import SignupForm from "../../components/SignupForm";
 import SearchResults from "../../components/SearchResults";
 
 class Signup extends Component {
@@ -28,37 +28,10 @@ class Signup extends Component {
     this.setState({ signup: event.target.value });
   };
 
-<<<<<<< HEAD
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   API.getDogsOfBreed(this.state.signup)
-  //     .then(res => {
-=======
-  handleFormSubmit = event => {
-    event.preventDefault();
-    
-    // API.getDogsOfBreed(this.state.signup)
-      // .then(res => {
->>>>>>> master
-  //       if (res.data.status === "error") {
-  //         throw new Error(res.data.message);
-  //       }
-  //       this.setState({ results: res.data.message, error: "" });
-  //     })
-  //     .catch(err => this.setState({ error: err.message }));
-<<<<<<< HEAD
-  // };
-=======
-  };
->>>>>>> master
-  
   handleFormSubmit = (event) => {
-    // alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
     console.log(this.state);
-
   }
-
 
   render() {
     return (
@@ -116,7 +89,6 @@ class Signup extends Component {
                     Sign Up!
                   </FormBtn>
                 </form>
-
 
           {/* <SignupForm
             handleFormSubmit={this.handleFormSubmit}
