@@ -11,7 +11,7 @@ const volunteerSeed = [
         phone: "303-297-0408",
         location: "Denver, CO",
         description: "Keep a limited income senior safe by shoveling his or her sidewalks throughout the snowy seasons.",
-        link: "https://voacolorado.org/volunteer-opportunities/snow-buddies"
+        link: "https://www.voacolorado.org/volunteer-opportunities/snow-buddies"
     },
     {
         organization: "Hanyperson",
@@ -20,7 +20,7 @@ const volunteerSeed = [
         phone: "303-297-0408",
         location: "Denver, CO",
         description: "Help seniors stay safely in their homes by providing minor home repairs and safety modifications for limited-income seniors.",
-        link: "https://voacolorado.org/volunteer-opportunities/handyperson"
+        link: "https://www.voacolorado.org/volunteer-opportunities/handyperson"
     },
     {
         organization: "Yard Angels",
@@ -29,6 +29,18 @@ const volunteerSeed = [
         phone: "303-297-0408",
         location: "2660 Larimer St., Denver, CO",
         description: "Simple yard work can be a huge task for seniors. Yard Angel volunteers help alleviate some of this burden and keep seniors safe.",
-        link: "https://voacolorado.org/volunteer-opportunities/yard-angels"
+        link: "https://www.voacolorado.org/volunteer-opportunities/yard-angels"
     }
 ];
+
+db.Info
+  .remove({})
+  .then(() => db.Info.collection.insertMany(volunteerSeed))
+  .then(data => {
+      console.log(data.result.n + "records inserted");
+      process.exit(0);
+  })
+  .catch(err => {
+      console.error(err);
+      process.exit(1);
+  });
