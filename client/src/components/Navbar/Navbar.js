@@ -2,22 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-
 const Navbar = props => (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+
         <Link className="navbar-brand" to="/">
-        <strong>Helping Hands</strong>
+            <strong>Helping Hands</strong>
         </Link>
 
-        {/* IS THIS DIV NEEDED ?? */}
-        <div>   
-
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>       
         </button>
 
-        <div className="collapse navbar-header navbar-collapse" id="navNavbar">
+        <div className="collapse navbar-collapse" id="navbarNav">
 
             <ul className="navbar-nav">
                 <li
@@ -32,7 +28,6 @@ const Navbar = props => (
                     Home
                 </Link>
                 </li>
-
                 <li
                 className={
                     window.location.pathname === "/opportunity"
@@ -81,7 +76,6 @@ const Navbar = props => (
                 </Link>
                 </li> */}
             </ul>
-        </div>
         </div>
     </nav>
 );
