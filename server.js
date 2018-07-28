@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV.trim() === "production") {
-  console.log((path.join(__dirname, "/client/build")));
-  app.use(express.static(path.join(__dirname, "/client/build")));
+  console.log((path.join(__dirname, "client/build")));
+  app.use(express.static(path.join(__dirname, "client/build")));
 }
 
 console.log(process.env.NODE_ENV + 'theres a space here!');
