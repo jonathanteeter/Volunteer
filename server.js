@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production".trim()) {
+if (process.env.NODE_ENV.trim() === "production") {
   console.log((path.join(__dirname, "/client/build")));
   app.use(express.static(path.join(__dirname, "/client/build")));
 }
