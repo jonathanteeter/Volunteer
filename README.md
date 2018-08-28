@@ -8,7 +8,7 @@ This is a full-stack web application built using a MERN stack framework:  MongoD
 ## Design & Technology
 * The project uses a MERN stack framework with these design requirements:
     * The application will scrape a targeted 3 volunteering websites and store the results in a Mongo database.  
-    * Scraping will occur once each night (not realtime on user search) 
+    * Scraping will occur once each night (not after each user search) 
     * At night, the database will be refreshed as new articles are downloaded automatically through either Node Scheduler or Heroku’s Request Timeout. 
     * A parser will be created for each volunteer site to define what info to pull.  The database structure will be aligned with the extracted fields.  
     * We expect commonality between the volunteer websites to possibly include:
