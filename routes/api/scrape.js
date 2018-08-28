@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const cheerio = require("cheerio");
-const async = require('async');
 const axios = require('axios');
 const db = require("../../models");
 
