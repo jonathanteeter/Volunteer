@@ -3,11 +3,7 @@
 This application will help the user to find a volunteering opportunity.  The user will be able to select the service area of interest, the demographic group in need, and the general location.  On search, the application will provide a list of opportunities, who is hosting each one, and the link to the website advertising the opportunity.
 
 ## What the Project Does
-<<<<<<< HEAD
-This is a full-stack web application built using a MERN stack framework:  MongoDB + Express.js + + React.js + Node.js.  The UI will take user provided criteria to help find a volunteering opportunity that interests them.  The user will be able to select the type of opportunity based on location.  The returned result will provide a list of opportunities and the link to the hosting website for each.
-=======
 This is a full-stack web application built using a MERN stack framework:  MongoDB + Express.js + React.js + Node.js.  The UI will take user provided criteria to help find a volunteering opportunity that interests them.  The user will be able to select the type of opportunity based on location.  The returned result will provide a list of opportunities and the link to the hosting website for each.
->>>>>>> cf94fd9f1d855f4acc0445ae1767bf1217cdab69
 
 ## Design & Technology
 * The project uses a MERN stack framework with these design requirements:
@@ -52,24 +48,6 @@ This is a full-stack web application built using a MERN stack framework:  MongoD
 * The biggest chanllenge was to learn React, the folder structure, and file dependencies.
 * React is so modular, so to gain understanding of API routes, components, and props was a challenge.
 * Rendering scraped data to the page was time consuming.  Scrape of a volunteer website into a MongoDB gave us data to work with but was not neat and pretty.
-<<<<<<< HEAD
-
-## Future Improvements
-* Scrape more volunteering websites
-* Provide more visual contents rather than just words like our results data
-* Volunteer opportunity filtering
-* User signup and Firebase authentication
-* Save opportunities of user's interest
-* Expand to other states, not just provide opportunity listings in Colorado
-
-## Home, Results, and Signup pages
-![Homepage Screenshot](images/homepage.PNG)
-![Results Page Screenshot](images/result_page.PNG)
-
-## Link to [Project Presentation]
-(https://1drv.ms/p/s!Ak54UOzYUe6VgYgaPfiEype46jIJIw)
-
-=======
 
 ## Future Improvements
 * Scrape more volunteering websites
@@ -81,17 +59,16 @@ This is a full-stack web application built using a MERN stack framework:  MongoD
 
 ## Spread the Love Pages
 * Home Page
-![Home Page Screenshot](images/HomePage.PNG)
+![Home Page Screenshot](images/HomePage.png)
 
 * Opportunity Page
-![Opportunity Page Screenshot](images/OpportunityPage.PNG)
+![Opportunity Page Screenshot](images/OpportunityPage.png)
 
 * Results Page
-![Returned Results Screenshot](images/HelpingHands.PNG)
+![Returned Results Screenshot](images/HelpingHands.png)
 
 ## Link to [Project Presentation]
 (https://1drv.ms/p/s!Ak54UOzYUe6VgYgaPfiEype46jIJIw)
 
->>>>>>> cf94fd9f1d855f4acc0445ae1767bf1217cdab69
 ## Link to [My Portfolio] 
 (https://jonathanteeter.github.io/jtPortfolio/)
