@@ -57,9 +57,15 @@ This is a full-stack web application built using a MERN stack framework:  MongoD
 * Save opportunities of user's interest
 * Expand to other states, not just provide opportunity listings in Colorado
 
-## Home, Results, and Signup pages
-![Homepage Screenshot](images/homepage.PNG)
-![Results Page Screenshot](images/result_page.PNG)
+## Spread the Love Pages
+* Home Page
+![Homepage Screenshot](images/HomePage.PNG)
+
+* Opportunity Page
+![Opportunity Page Screenshot](images/OpportunityPage.PNG)
+
+* Results Page
+![Returned Results Screenshot](images/HelpingHands.PNG)
 
 ## Link to [Project Presentation]
 (https://1drv.ms/p/s!Ak54UOzYUe6VgYgaPfiEype46jIJIw)
