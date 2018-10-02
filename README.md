@@ -59,10 +59,10 @@ This is a full-stack web application built using a MERN stack framework:  MongoD
 
 ## Spread the Love Pages
 * Home Page
-![Home Page Screenshot](/images/HomePage.png)
+![Home Page Screenshot](/images/HomePage.PNG)
 
 * Opportunity Page
-![Opportunity Page Screenshot](/images/OpportunityPage.png)
+![Opportunity Page Screenshot](/images/OpportunityPage.PNG)
 
 * Results Page
 ![Returned Results Screenshot](/images/HelpingHands.png)
